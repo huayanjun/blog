@@ -38,7 +38,7 @@ pipeline {
                 script {
                     // Run the Docker image
                     docker.image('blog:latest').run('-p 3000:80 --name=blog')
-                    sh 'docker rmi $(docker images | grep "none" | awk '{print $3}')'
+                    sh 'docker image prune -f'
                 }
             }
         }
