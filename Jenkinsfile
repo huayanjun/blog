@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                Checkout scm
+                checkout scm
             }
         }
         
@@ -18,8 +18,7 @@ pipeline {
         stage('Build Docker image') {
             steps {
                 script {
-                    def tagName=new date()
-                    docker.build('blog:$tagName')       
+                    docker.build('blog:latest')       
                 }
             }
         }
