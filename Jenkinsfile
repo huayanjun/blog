@@ -18,7 +18,6 @@ pipeline {
         stage('Build Docker image') {
             steps {
                 script {
-                    sh 'docker rmi blog:latest || true'
                     docker.build('blog:latest')       
                 }
             }
@@ -39,6 +38,7 @@ pipeline {
                 script {
                     // Run the Docker image
                     docker.image('blog:latest').run('-p 3000:80 --name=blog')
+                    sh 'docker rmi $(docker images | grep "none" | awk '{print $3}')'
                 }
             }
         }
