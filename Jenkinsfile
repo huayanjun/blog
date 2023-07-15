@@ -1,3 +1,6 @@
+import java.text.SimpleDateFormat
+import java.util.Date
+
 pipeline {
     agent any
     
@@ -18,7 +21,8 @@ pipeline {
         stage('Build Docker image') {
             steps {
                 script {
-                    docker.build('blog:latest')       
+                    def timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())
+                    docker.build('blog:${timestamp}')       
                 }
             }
         }
@@ -38,7 +42,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker image
-                    docker.image('blog:latest').run('-p 3000:80')
+                    docker.image('blog:latest').run('-p 3000:80 --name=blog')
                 }
             }
         }
