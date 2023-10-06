@@ -1,5 +1,5 @@
 ---
-title: test
+title: 新的博客
 date: 2023-07-15 14:13:14
 tags:
 ---
