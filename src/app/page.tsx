@@ -259,9 +259,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-1/6 bg-gray-100 overflow-y-auto">
-            <div className="sticky top-4 ">
-              <div className="bg-white rounded-lg shadow-md overflow-hidden">
+          <div className="w-1/6 bg-gray-100 flex flex-col">
+            <div className="flex-grow py-4 overflow-y-auto">
+              <div className="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col">
                 {/* Personal intro */}
                 <div className="p-4 border-b flex flex-col items-center text-center">
                   <div className="mb-3">
@@ -315,11 +315,9 @@ export default function Home() {
                     ))}
                   </div>
                 </div>
-              </div>
 
-              {/* Archives */}
-              <div className="mt-4 bg-white rounded-lg shadow-md overflow-hidden">
-                <div className="p-4">
+                {/* Archives */}
+                <div className="p-4 flex-grow overflow-y-auto">
                   <h3 className="text-lg font-semibold mb-3">Archives</h3>
                   <ul className="text-sm text-gray-600">
                     {Object.entries(archiveStructure)

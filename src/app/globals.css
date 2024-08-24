@@ -51,8 +51,22 @@ html, body {
 main {
   flex: 1;
   display: flex;
+  overflow: hidden;
+ /* Changed from height to min-height */
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  height: 100%;
 }
 
 .overflow-y-auto {
   overflow-y: auto;
+}
+
+body > div:first-child {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
