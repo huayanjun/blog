@@ -31,3 +31,28 @@ body {
     text-wrap: balance;
   }
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#__next {
+  height: 100%;
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
